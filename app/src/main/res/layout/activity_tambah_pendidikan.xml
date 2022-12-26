@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TambahPendidikan">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:text="Tambah Pendidikan"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="35dp"
+        android:textColor="@color/brown"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/text"
+        android:id="@+id/txtPendidikan">
+        <EditText
+            android:id="@+id/edtPendidikan"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Nama Tempat Pendidikan*"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/txtPendidikan"
+        android:id="@+id/txtKota">
+
+        <EditText
+            android:id="@+id/edtKota"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Kota"
+            android:inputType="text"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/txtKota"
+        android:id="@+id/txtJenjang">
+        <EditText
+            android:id="@+id/edtJenjang"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Jenjang"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/txtJenjang"
+        android:id="@+id/txtJurusan">
+
+        <EditText
+            android:id="@+id/edtJurusan"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Jurusan"
+            android:inputType="text"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/txtJurusan"
+        android:id="@+id/txtTahunmulai">
+        <EditText
+            android:id="@+id/edtTahunmulai"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Tahun Mulai"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/txtTahunmulai"
+        android:id="@+id/txtTahunselesai">
+        <EditText
+            android:id="@+id/edtTahunselesai"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Tahun Selesai"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnTambah"
+        android:layout_below="@id/txtTahunselesai"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Tambah Pendidikan"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_brown"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnTambah"
+        android:layout_marginTop="20dp"
+        android:id="@+id/underline"
+        android:background="@color/underline" />
+
+    <TextView
+        android:id="@+id/catatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/brown"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_below="@+id/underline"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Catatan :"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/catatan"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Seluruh data yang dipasang pada form ini akan ditampilkan untuk umum. Anda tidak perlu melengkapinya jika tidak bersedia. Hanya kolom bertanda * yang harus diisi."
+        android:textStyle="normal" />
+
+
+
+
+</RelativeLayout>
