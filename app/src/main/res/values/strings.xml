@@ -11,4 +11,12 @@
     <string name="Communication">Communication</string>
     <string name="Share">Share</string>
     <string name="Rate">Rate us</string>
+    <string name="DataMember">Data Member</string>
+    <string name="DataBisnis">Data Bisnis</string>
+    <string name="Mitra">Mitra</string>
+    <string name="MarketPlace">Market Place</string>
+
+
+
+
 </resources>

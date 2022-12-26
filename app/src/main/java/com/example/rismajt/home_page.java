@@ -36,7 +36,9 @@ public class home_page extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
         drawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(drawerToggle);
-        drawerLayout.bringToFront();
+        drawerLayout.bringToFront(
+
+        );
         drawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -45,12 +47,13 @@ public class home_page extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.home:
                     {
-                        Toast.makeText(home_page.this,"Home Selected",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(home_page.this,home_page.class);
+                        startActivity(intent);
                     }
                     case R.id.contact:
                     {
-                        Toast.makeText(home_page.this,"Contact Selected",Toast.LENGTH_SHORT).show();
-                    }
+                        Intent intent = new Intent(home_page.this,home_page.class);
+                        startActivity(intent);                    }
                     case R.id.gallery:
                     {
                         Toast.makeText(home_page.this,"Gallery Selected",Toast.LENGTH_SHORT).show();

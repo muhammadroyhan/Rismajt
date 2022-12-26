@@ -25,7 +25,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview"
                 android:layout_width="match_parent"
@@ -83,9 +83,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
-                            android:text="Data Member">
+                            android:text="@string/DataMember">
                         </TextView>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -118,9 +118,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
-                            android:text="Data Bisnis">
+                            android:text="@string/DataBisnis">
                         </TextView>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -153,9 +153,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
-                            android:text="Mitra">
+                            android:text="@string/Mitra">
                         </TextView>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -188,9 +188,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
-                            android:text="Market Place">
+                            android:text="@string/MarketPlace">
                         </TextView>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
