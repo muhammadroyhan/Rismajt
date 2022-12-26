@@ -20,9 +20,6 @@
             android:name=".ForgotActivity"
             android:exported="false" />
         <activity
-            android:name=".ListAdapter"
-            android:exported="false" />
-        <activity
             android:name=".MemberActivity"
             android:exported="false" />
         <activity
