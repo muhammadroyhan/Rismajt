@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ListAdapter extends ArrayAdapter<Member> {
 
     public ListAdapter(Context context, ArrayList<Member> memberArrayList){
-        super(context,R.layout.list_adapter,memberArrayList);
+        super(context,R.layout.list_member,memberArrayList);
     }
 
     @NonNull
@@ -25,7 +25,7 @@ public class ListAdapter extends ArrayAdapter<Member> {
 
         Member member = getItem(position);
         if ((convertView == null)){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_adapter,parent,false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_member,parent,false);
         }
         ImageView imageView = convertView.findViewById(R.id.profile_image);
         TextView userName = convertView.findViewById(R.id.namaMember);

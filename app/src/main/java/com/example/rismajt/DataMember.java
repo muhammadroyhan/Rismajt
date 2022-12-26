@@ -17,6 +17,7 @@ public class DataMember extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         binding = ActivityDataMemberBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -39,11 +40,11 @@ public class DataMember extends AppCompatActivity {
         }
         ListAdapter listAdapter = new ListAdapter(DataMember.this,memberArrayList);
 
-        binding.listview.setAdapter(listAdapter);
+        binding.listview.setAdapter((android.widget.ListAdapter) listAdapter);
         binding.listview.setClickable(true);
         binding.listview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
-            public void onItemClick(AdapterView<?>parent, View view, int position, long id){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Intent i = new Intent(DataMember.this,MemberActivity.class);
                 i.putExtra("nama",nama[position]);
                 i.putExtra("angkatan",angkatan[position]);
@@ -57,5 +58,6 @@ public class DataMember extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
     }
 }

@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Profile">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/home"
+                    android:title="Home"/>
+                <item android:id="@+id/editProfil"
+                    android:title="Edit Profil"/>
+                <item android:id="@+id/tambahPendidikan"
+                    android:title="Tambah Pendidikan"/>
+                <item android:id="@+id/tambahBisnis"
+                    android:title="Tambah Bisnis"/>
+                <item android:id="@+id/tambahKarir"
+                    android:title="Tambah Karir"/>
+            </group>
+        </menu>
+    </item>
     <group android:checkableBehavior="single">
-        <item android:id="@+id/home"
-            android:title="@string/Home"/>
-        <item android:id="@+id/contact"
-            android:title="@string/Contact"/>
-        <item android:id="@+id/gallery"
-            android:title="@string/Gallery"/>
+        <item android:id="@+id/dataMember"
+            android:title="Data Member"/>
+        <item android:id="@+id/dataBisnis"
+            android:title="Data Bisnis"/>
+        <item android:id="@+id/mitra"
+            android:title="Mitra"/>
     </group>
-    <item android:title="@string/Profile">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item android:id="@+id/about"
-                    android:title="@string/About"/>
-                <item android:id="@+id/login"
-                    android:title="@string/Login"/>
-            </group>
-        </menu>
-    </item>
-    <item android:title="@string/Communication">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item android:id="@+id/share"
-                    android:title="@string/Share"/>
-                <item android:id="@+id/rateus"
-                    android:title="@string/Rate"/>
-            </group>
-        </menu>
-    </item>
+
 </menu>
