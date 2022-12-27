@@ -12,7 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.slider.Slider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +39,18 @@ public class home_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        ImageSlider imageSlider = findViewById(R.id.image_slider);
+        ArrayList<SlideModel> slideModels = new ArrayList<>();
+
+        slideModels.add(new SlideModel(R.drawable.imgslide1, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.imgslide2, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.imgslide3, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.imgslide4, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.imgslide5, ScaleTypes.FIT));
+
+        imageSlider.setImageList(slideModels);
+
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         drawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
