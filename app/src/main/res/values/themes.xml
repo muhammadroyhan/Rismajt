@@ -26,7 +26,7 @@
     </style>
 
     <style name="headerText" parent="parent">
-        <item name="android:textSize">@dimen/headerTextSize</item>
+        <item name="android:textSize">24dp</item>
         <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
         <item name="android:textColor">@color/whiteTextColor</item>
         <item name="android:textStyle">bold</item>
@@ -34,7 +34,7 @@
 
     <style name="loginHeader">
         <item name="android:textColor">@color/primaryTextColor</item>
-        <item name="android:textSize">@dimen/headerTextSize</item>
+        <item name="android:textSize">24dp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -45,7 +45,7 @@
     </style>
 
     <style name="modifiedEditText" parent="parent">
-        <item name="android:textSize">@dimen/newsMoreTextSize</item>
+        <item name="android:textSize">24dp</item>
         <item name="android:backgroundTint" tools:targetApi="lollipop">@color/primaryTextColor</item>
     </style>
 
