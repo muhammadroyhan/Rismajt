@@ -5,20 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TambahPendidikan">
+    tools:context=".TambahKarir">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/text"
-            android:text="Tambah Pendidikan"
+            android:text="Tambah Karir"
             android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"
-            android:textSize="35dp"
+            android:textSize="35sp"
             android:textColor="@color/brown"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -28,13 +27,15 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_below="@+id/text"
-            android:id="@+id/txtPendidikan">
+            android:id="@+id/txtJabatan">
+
             <EditText
-                android:id="@+id/edtPendidikan"
+                android:id="@+id/edtJabatan"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Nama Tempat Pendidikan*"
-                android:inputType="text"/>
+                android:layout_height="50dp"
+                android:hint="Jabatan/Pangkat/Tugas*"
+                android:inputType="text"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -43,14 +44,14 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtPendidikan"
-            android:id="@+id/txtKota">
+            android:layout_below="@+id/txtJabatan"
+            android:id="@+id/txtJenis">
 
             <EditText
-                android:id="@+id/edtKota"
+                android:id="@+id/edtKJenis"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:hint="Kota"
+                android:hint="Jenis Pekerjaan*"
                 android:inputType="text"
                 tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -61,14 +62,16 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtKota"
-            android:id="@+id/txtJenjang">
+            android:layout_below="@+id/txtJenis"
+            android:id="@+id/txtBidang">
+
             <EditText
-                android:id="@+id/edtJenjang"
+                android:id="@+id/edtBidang"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:hint="Jenjang"
-                android:inputType="text"/>
+                android:hint="Bidang Pekerjaan"
+                android:inputType="number"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -77,14 +80,14 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtJenjang"
-            android:id="@+id/txtJurusan">
+            android:layout_below="@+id/txtBidang"
+            android:id="@+id/txtPerusahaan">
 
             <EditText
-                android:id="@+id/edtJurusan"
+                android:id="@+id/edtPerusahaant"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:hint="Jurusan"
+                android:hint="Nama Perusahaan"
                 android:inputType="text"
                 tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -95,7 +98,25 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtJurusan"
+            android:layout_below="@+id/txtPerusahaan"
+            android:id="@+id/txtLokasi">
+
+            <EditText
+                android:id="@+id/edtLokasi"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Lokasi"
+                android:inputType="text"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@+id/txtLokasi"
             android:id="@+id/txtTahunmulai">
             <EditText
                 android:id="@+id/edtTahunmulai"
@@ -129,7 +150,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Tambah Pendidikan"
+            android:text="Tambah Karir/Pekerjaan"
             android:textColor="@color/white"
             android:background="@drawable/btn_brown"
             android:onClick="btnTambah"/>
@@ -162,7 +183,10 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:text="Seluruh data yang dipasang pada form ini akan ditampilkan untuk umum. Anda tidak perlu melengkapinya jika tidak bersedia. Hanya kolom bertanda * yang harus diisi."
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            android:text="Seluruh data yang dipasang pada form ini akan ditampilkan untuk umum. Anda tidak perlu melengkapinya jika tidak bersedia. Hanya kolom bertanda * yang harus diisi.">
+        </TextView>
     </RelativeLayout>
+
+
 </ScrollView>

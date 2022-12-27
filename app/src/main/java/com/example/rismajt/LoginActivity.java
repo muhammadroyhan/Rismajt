@@ -37,14 +37,17 @@ public class LoginActivity extends AppCompatActivity {
         else if (TextUtils.isEmpty(editTextPassword.getText().toString())) {
             Toast.makeText(view.getContext(), "Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
         } else {
-            Intent i = new Intent(LoginActivity.this, home_page.class);
+            Intent i = new Intent(LoginActivity.this, TambahBisnis.class);
             startActivity(i);
         }
     }
     public void postRegister(View view) {
         Intent i = new Intent(LoginActivity.this, TambahPendidikan.class);
         startActivity(i);
-
+    }
+    public void clickLupa(View view) {
+        Intent i = new Intent(LoginActivity.this, TambahKarir.class);
+        startActivity(i);
     }
     public static boolean isValidEmail (CharSequence email){
         return (Patterns.EMAIL_ADDRESS.matcher(email).matches());
