@@ -14,14 +14,14 @@
         android:theme="@style/Theme.Rismajt"
         tools:targetApi="31">
         <activity
-            android:name=".TambahKarir"
+            android:name=".UserProfile"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".UserProfile"
+            android:name=".TambahKarir"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -44,8 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".home_page"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".TambahPendidikan"
             android:exported="false" />
