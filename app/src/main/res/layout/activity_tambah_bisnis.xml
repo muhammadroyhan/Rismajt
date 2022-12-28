@@ -5,181 +5,209 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    tools:openDrawer="start"
     tools:context=".TambahBisnis">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/text"
-            android:text="Tambah Bisnis"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:textSize="35sp"
-            android:textColor="@color/brown"/>
-
-        <com.google.android.material.textfield.TextInputLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/text"
-            android:id="@+id/txtBisnis">
-            <EditText
-                android:id="@+id/edtBisnis"
+            android:background="@color/colorPrimary"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            app:navigationIcon="@drawable/ic_baseline_menu_24"
+            >
+        </androidx.appcompat.widget.Toolbar>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            >
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Nama Usaha/Bisnis*"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text"
+                    android:text="Tambah Bisnis"
+                    android:layout_marginTop="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="35sp"
+                    android:textColor="@color/brown"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtBisnis"
-            android:id="@+id/txtBidang">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/text"
+                    android:id="@+id/txtBisnis">
+                    <EditText
+                        android:id="@+id/edtBisnis"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Nama Usaha/Bisnis*"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/edtKota"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Bidang Bisnis*"
-                android:inputType="text"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtBisnis"
+                    android:id="@+id/txtBidang">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtBidang"
-            android:id="@+id/txtNotelp">
-            <EditText
-                android:id="@+id/edtNotelp"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Nomor Telpon"
-                android:inputType="number"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                    <EditText
+                        android:id="@+id/edtKota"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Bidang Bisnis*"
+                        android:inputType="text"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtNotelp"
-            android:id="@+id/txtAlamat">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtBidang"
+                    android:id="@+id/txtNotelp">
+                    <EditText
+                        android:id="@+id/edtNotelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Nomor Telpon"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/edtAlamat"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Alamat"
-                android:inputType="text"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtNotelp"
+                    android:id="@+id/txtAlamat">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtAlamat"
-            android:id="@+id/txtProduk">
-            <EditText
-                android:id="@+id/edtProduk"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Produk"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                    <EditText
+                        android:id="@+id/edtAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Alamat"
+                        android:inputType="text"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtProduk"
-            android:id="@+id/txtMediasosial">
-            <EditText
-                android:id="@+id/edtMediasosial"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Media Sosial"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtAlamat"
+                    android:id="@+id/txtProduk">
+                    <EditText
+                        android:id="@+id/edtProduk"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Produk"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtMediasosial"
-            android:id="@+id/txtWebsite">
-            <EditText
-                android:id="@+id/edtWebsite"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Website"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtProduk"
+                    android:id="@+id/txtMediasosial">
+                    <EditText
+                        android:id="@+id/edtMediasosial"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Media Sosial"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnTambah"
-            android:layout_below="@id/txtWebsite"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="Tambah Bisnis"
-            android:textColor="@color/white"
-            android:background="@drawable/btn_brown"
-            android:onClick="btnTambah"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtMediasosial"
+                    android:id="@+id/txtWebsite">
+                    <EditText
+                        android:id="@+id/edtWebsite"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Website"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/btnTambah"
-            android:layout_marginTop="20dp"
-            android:id="@+id/underline"
-            android:background="@color/underline" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnTambah"
+                    android:layout_below="@id/txtWebsite"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Tambah Bisnis"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_brown"
+                    android:onClick="btnTambah"/>
 
-        <TextView
-            android:id="@+id/catatan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/brown"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_below="@+id/underline"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Catatan :"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/btnTambah"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/underline"
+                    android:background="@color/underline" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/catatan"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:textStyle="normal"
-            android:text="Seluruh data yang dipasang pada form ini akan ditampilkan untuk umum. Anda tidak perlu melengkapinya jika tidak bersedia. Hanya kolom bertanda * yang harus diisi.">
-        </TextView>
+                <TextView
+                    android:id="@+id/catatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/brown"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/underline"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Catatan :"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/catatan"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="normal"
+                    android:text="Seluruh data yang dipasang pada form ini akan ditampilkan untuk umum. Anda tidak perlu melengkapinya jika tidak bersedia. Hanya kolom bertanda * yang harus diisi.">
+                </TextView>
+            </RelativeLayout>
+
+        </ScrollView>
     </RelativeLayout>
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
