@@ -31,6 +31,7 @@ public class DataMember extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityDataMemberBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setTitle("Data Member");
 
         int[] imageId = {R.drawable.men,R.drawable.women,R.drawable.women1,R.drawable.women,R.drawable.men,R.drawable.men,R.drawable.women1,R.drawable.women,R.drawable.women1,};
         String[] nama = {"Andiar Pratama","Indah Puspita","Khansa Lutfia","Widya Astuti","Kurnia Sandi","Fadli Mus","Sabrina","Salsabilla Fatimah","Maharani"};
