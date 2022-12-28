@@ -72,7 +72,9 @@ public class home_page extends AppCompatActivity {
                         startActivity(intent1);
                         break;
                     case R.id.tambahKarir:
-
+                        Intent intent3 = new Intent(home_page.this,TambahKarir.class);
+                        startActivity(intent3);
+                        break;
                     case R.id.dataMember:
                         Intent intent2 = new Intent(home_page.this,DataMember.class);
                         startActivity(intent2);

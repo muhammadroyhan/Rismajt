@@ -1,18 +1,28 @@
 package com.example.rismajt;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
 import com.example.rismajt.databinding.ActivityDataMemberBinding;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
 public class DataMember extends AppCompatActivity {
 
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
     ActivityDataMemberBinding binding;
 
     @Override
@@ -59,5 +69,58 @@ public class DataMember extends AppCompatActivity {
             }
         });
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        navigationView.bringToFront();
+        ActionBarDrawerToggle drawerToggle= new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
+        drawerLayout.addDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home:
+                        Intent intent2 = new Intent(DataMember.this,home_page.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.editProfil:
+
+                    case R.id.tambahPendidikan:
+                        Intent intent = new Intent(DataMember.this,TambahPendidikan.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.tambahBisnis:
+                        Intent intent1 = new Intent(DataMember.this,TambahBisnis.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.tambahKarir:
+                        Intent intent3 = new Intent(DataMember.this,TambahKarir.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.dataMember:
+                        break;
+                    case R.id.dataBisnis:
+//                        Intent intent4 = new Intent(DataMember.this,DataBisnis.class);
+//                        startActivity(intent4);
+                }
+                return true;
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START))
+        {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else{
+            super.onBackPressed();
+        }
     }
 }

@@ -1,192 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    tools:openDrawer="start"
     tools:context=".TambahKarir">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/text"
-            android:text="Tambah Karir"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:textSize="35sp"
-            android:textColor="@color/brown"/>
-
-        <com.google.android.material.textfield.TextInputLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/text"
-            android:id="@+id/txtJabatan">
+            android:background="@color/colorPrimary"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            app:navigationIcon="@drawable/ic_baseline_menu_24"
+            >
+        </androidx.appcompat.widget.Toolbar>
 
-            <EditText
-                android:id="@+id/edtJabatan"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar">
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Jabatan/Pangkat/Tugas*"
-                android:inputType="text"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text"
+                    android:text="Tambah Karir"
+                    android:layout_marginTop="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="35sp"
+                    android:textColor="@color/brown"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtJabatan"
-            android:id="@+id/txtJenis">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/text"
+                    android:id="@+id/txtJabatan">
 
-            <EditText
-                android:id="@+id/edtKJenis"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Jenis Pekerjaan*"
-                android:inputType="text"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                    <EditText
+                        android:id="@+id/edtJabatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Jabatan/Pangkat/Tugas*"
+                        android:inputType="text"
+                        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtJenis"
-            android:id="@+id/txtBidang">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtJabatan"
+                    android:id="@+id/txtJenis">
 
-            <EditText
-                android:id="@+id/edtBidang"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Bidang Pekerjaan"
-                android:inputType="number"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                    <EditText
+                        android:id="@+id/edtKJenis"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Jenis Pekerjaan*"
+                        android:inputType="text"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtBidang"
-            android:id="@+id/txtPerusahaan">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtJenis"
+                    android:id="@+id/txtBidang">
 
-            <EditText
-                android:id="@+id/edtPerusahaant"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Nama Perusahaan"
-                android:inputType="text"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                    <EditText
+                        android:id="@+id/edtBidang"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Bidang Pekerjaan"
+                        android:inputType="number"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtPerusahaan"
-            android:id="@+id/txtLokasi">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtBidang"
+                    android:id="@+id/txtPerusahaan">
 
-            <EditText
-                android:id="@+id/edtLokasi"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Lokasi"
-                android:inputType="text"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                    <EditText
+                        android:id="@+id/edtPerusahaant"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Nama Perusahaan"
+                        android:inputType="text"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtLokasi"
-            android:id="@+id/txtTahunmulai">
-            <EditText
-                android:id="@+id/edtTahunmulai"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Tahun Mulai"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtPerusahaan"
+                    android:id="@+id/txtLokasi">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@+id/txtTahunmulai"
-            android:id="@+id/txtTahunselesai">
-            <EditText
-                android:id="@+id/edtTahunselesai"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Tahun Selesai"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                    <EditText
+                        android:id="@+id/edtLokasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Lokasi"
+                        android:inputType="text"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnTambah"
-            android:layout_below="@id/txtTahunselesai"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="Tambah Karir/Pekerjaan"
-            android:textColor="@color/white"
-            android:background="@drawable/btn_brown"
-            android:onClick="btnTambah"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtLokasi"
+                    android:id="@+id/txtTahunmulai">
+                    <EditText
+                        android:id="@+id/edtTahunmulai"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Tahun Mulai"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/btnTambah"
-            android:layout_marginTop="20dp"
-            android:id="@+id/underline"
-            android:background="@color/underline"
-            />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@+id/txtTahunmulai"
+                    android:id="@+id/txtTahunselesai">
+                    <EditText
+                        android:id="@+id/edtTahunselesai"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Tahun Selesai"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/catatan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/brown"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_below="@+id/underline"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Catatan :"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnTambah"
+                    android:layout_below="@id/txtTahunselesai"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Tambah Karir/Pekerjaan"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_brown"
+                    android:onClick="btnTambah"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/catatan"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:textStyle="normal"
-            android:text="Seluruh data yang dipasang pada form ini akan ditampilkan untuk umum. Anda tidak perlu melengkapinya jika tidak bersedia. Hanya kolom bertanda * yang harus diisi.">
-        </TextView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/btnTambah"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/underline"
+                    android:background="@color/underline"
+                    />
+
+                <TextView
+                    android:id="@+id/catatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/brown"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/underline"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Catatan :"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/catatan"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:textStyle="normal"
+                    android:text="Seluruh data yang dipasang pada form ini akan ditampilkan untuk umum. Anda tidak perlu melengkapinya jika tidak bersedia. Hanya kolom bertanda * yang harus diisi.">
+                </TextView>
+            </RelativeLayout>
+        </ScrollView>
     </RelativeLayout>
 
-
-</ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>

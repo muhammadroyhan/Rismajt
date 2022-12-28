@@ -52,7 +52,9 @@ public class TambahBisnis extends AppCompatActivity {
                     case R.id.tambahBisnis:
                         break;
                     case R.id.tambahKarir:
-
+                        Intent intent3 = new Intent(TambahBisnis.this,TambahKarir.class);
+                        startActivity(intent3);
+                        break;
                     case R.id.dataMember:
                         Intent intent2 = new Intent(TambahBisnis.this,DataMember.class);
                         startActivity(intent2);

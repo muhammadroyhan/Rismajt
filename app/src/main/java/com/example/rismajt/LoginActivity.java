@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         else if (TextUtils.isEmpty(editTextPassword.getText().toString())) {
             Toast.makeText(view.getContext(), "Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
         } else {
-            Intent i = new Intent(LoginActivity.this, TambahBisnis.class);
+            Intent i = new Intent(LoginActivity.this, home_page.class);
             startActivity(i);
         }
     }
