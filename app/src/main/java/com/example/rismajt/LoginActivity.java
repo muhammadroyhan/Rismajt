@@ -42,11 +42,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
     public void postRegister(View view) {
-        Intent i = new Intent(LoginActivity.this, TambahPendidikan.class);
+        Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(i);
     }
     public void clickLupa(View view) {
-        Intent i = new Intent(LoginActivity.this, TambahKarir.class);
+        Intent i = new Intent(LoginActivity.this, ForgotActivity.class);
         startActivity(i);
     }
     public static boolean isValidEmail (CharSequence email){
