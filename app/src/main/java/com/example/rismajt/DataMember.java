@@ -109,6 +109,12 @@ public class DataMember extends AppCompatActivity {
                         Intent intent4 = new Intent(DataMember.this,DataBisnis.class);
                         startActivity(intent4);
                         break;
+                    case R.id.mitra:
+                        Intent intent5 = new Intent(DataMember.this,Mitra.class);
+                        startActivity(intent5);
+                    case R.id.tentang:
+                        Intent intent6 = new Intent(DataMember.this,RismaJT.class);
+                        startActivity(intent6);
                 }
                 return true;
             }

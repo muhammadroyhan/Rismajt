@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">rismajt</string>
+    <string name="app_name">RismaJT</string>
     <string name="open">Open Navigation</string>
     <string name="close">Close Navigation</string>
     <string name="Home">Home</string>
@@ -15,6 +15,7 @@
     <string name="DataBisnis">Data Bisnis</string>
     <string name="Mitra">Mitra</string>
     <string name="MarketPlace">Market Place</string>
+    <string name="DescRisma">RISMA JT merupakan salah satu badan otonom di bawah naungan Masjid Agung Jawa Tengah (MAJT) yang bertugas untuk melakukan Pengkaderan, pembinaan dan Pemberdayaan bagi Remaja Islam yang tergabung di dalamnya. RISMA JT sebagai kepanjangan tangan dari MAJT untuk melakukan pengkaderan dan pembinaan bagi remaja Islam memiliki peranan penting dalam membina remaja untuk selalu berbagi kemanfaatan, mengajak pada kebaikan serta menjadikan diri generasi muda terbaik bangsa.</string>
 
 
 </resources>

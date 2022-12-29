@@ -109,6 +109,12 @@ public class DataBisnis extends AppCompatActivity {
                         break;
                     case R.id.dataBisnis:
                         break;
+                    case R.id.mitra:
+                        Intent intent5 = new Intent(DataBisnis.this,Mitra.class);
+                        startActivity(intent5);
+                    case R.id.tentang:
+                        Intent intent6 = new Intent(DataBisnis.this,RismaJT.class);
+                        startActivity(intent6);
                 }
                 return true;
             }

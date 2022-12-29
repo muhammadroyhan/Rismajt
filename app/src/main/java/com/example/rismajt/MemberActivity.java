@@ -29,7 +29,7 @@ public class MemberActivity extends AppCompatActivity {
             String jenjang = intent.getStringExtra("jenjang");
             String jurusan = intent.getStringExtra("jurusan");
 
-            int imageid = intent.getIntExtra("imageId",R.drawable.men);
+            int imageid = intent.getIntExtra("imageId",R.drawable.men1);
 
             binding.namaProfile.setText(nama);
             binding.angkatanProfile.setText(angkatan);

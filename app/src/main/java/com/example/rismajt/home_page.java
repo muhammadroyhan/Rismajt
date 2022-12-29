@@ -82,6 +82,12 @@ public class home_page extends AppCompatActivity {
                     case R.id.dataBisnis:
                         Intent intent4 = new Intent(home_page.this,DataBisnis.class);
                         startActivity(intent4);
+                    case R.id.mitra:
+                        Intent intent5 = new Intent(home_page.this,Mitra.class);
+                        startActivity(intent5);
+                    case R.id.tentang:
+                        Intent intent6 = new Intent(home_page.this,RismaJT.class);
+                        startActivity(intent6);
 
                 }
                 return true;
@@ -93,6 +99,15 @@ public class home_page extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void clickDataBisnis(View view){
+        Intent i = new Intent(home_page.this, DataBisnis.class);
+        startActivity(i);
+    }
+
+    public void clickMitras(View view){
+        Intent i = new Intent(home_page.this, Mitra.class);
+        startActivity(i);
+    }
 
 
     @Override
