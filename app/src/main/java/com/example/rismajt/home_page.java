@@ -80,6 +80,8 @@ public class home_page extends AppCompatActivity {
                         startActivity(intent2);
                         break;
                     case R.id.dataBisnis:
+                        Intent intent4 = new Intent(home_page.this,DataBisnis.class);
+                        startActivity(intent4);
 
                 }
                 return true;

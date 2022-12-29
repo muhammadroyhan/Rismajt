@@ -24,6 +24,8 @@
             android:title="Data Bisnis"/>
         <item android:id="@+id/mitra"
             android:title="Mitra"/>
+        <item android:id="@+id/tentang"
+            android:title="Tentang RismaJT"/>
     </group>
 
 </menu>

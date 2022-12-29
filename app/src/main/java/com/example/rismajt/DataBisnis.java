@@ -13,59 +13,59 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.example.rismajt.databinding.ActivityDataMemberBinding;
+
+import com.example.rismajt.databinding.ActivityDataBisnisBinding;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class DataMember extends AppCompatActivity {
-
+public class DataBisnis extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    ActivityDataMemberBinding binding;
+    ActivityDataBisnisBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        binding = ActivityDataMemberBinding.inflate(getLayoutInflater());
+        binding = ActivityDataBisnisBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setTitle("Data Member");
+        setTitle("Data Bisnis");
 
-        int[] imageId = {R.drawable.men1,R.drawable.women1,R.drawable.women2,R.drawable.women3,R.drawable.men2,R.drawable.men3,R.drawable.women4,R.drawable.women5,R.drawable.women6,};
+        String[] namab = {"Salamadinah Travel Umroh","Nabil Tour & Travel","Griya Persada","Sembako","Healtycare","Sinar Rembulan","Tunas Agri Farm","UD Barokah","PT Rutan",};
+        String[] alamat = {"Jl Teluk Gong Raya 6 Dki Jakarta","Jl Proklamasi 56 Dki Jakarta","Jl Pemuda 33-37 Plaza Surabaya Lt 2 Jawa Timur","Jl Cikini Raya 84-86 Ged Cik's Dki Jakarta","Jl North Kav 34 Dki Jakarta","Jl Abdul Majid Raya 17, Dki Jakarta","Pasar Genteng Q1Genteng","Komplek Ciharum 24 RT 02/06"," Jl Pd Kacang Prima Bl I-2/5"};
+        String[] email = {"andiarpratama@gmail.com","indahpuspita1@gmail.com","khansaltf@gmail.com","w.astuti@gmail.com","kurnia123@gmail.com","fadlimustofa@gmail.com","sabrina@gmail.com","salsabilaf@gmail.com","maharani@gmail.com"};
+        String[] bidang = {"Wisata","Wisata","Perdagangan","Perdagangan","Kesehatan","Perdagangan","Pertanian","Perdagangan","Perdagangan"};
+        String[] nohp = {"628545542750","628562845728","628574949448","628567691156","628522498782","628555182577","628512399158","628564916165","628534369887"};
+        String[] produk = {"-","-","-","-","-","-","-","-","-"};
         String[] nama = {"Andiar Pratama","Indah Puspita","Khansa Lutfia","Widya Astuti","Kurnia Sandi","Fadli Mus","Sabrina","Salsabilla Fatimah","Maharani"};
         String[] angkatan = {"2020","2019","2019","2020","2018","2018","2019","2019","2021"};
-        String[] alamat = {"Jl Teluk Gong Raya 6 Dki Jakarta","Jl Proklamasi 56 Dki Jakarta","Jl Pemuda 33-37 Plaza Surabaya Lt 2 Jawa Timur","Jl Cikini Raya 84-86 Ged Cik's Dki Jakarta","Jl North Kav 34 Dki Jakarta","Jl Abdul Majid Raya 17, Dki Jakarta","Pasar Genteng Q1Genteng","Komplek Ciharum 24 RT 02/06"," Jl Pd Kacang Prima Bl I-2/5"};
-        String[] bisnis = {"Perdagangan","Wisata","Perdagangan","Perdagangan","Kesehatan","Perdagangan","Pertanian","Perdagangan","Perdagangan"};
-        String[] email = {"andiarpratama@gmail.com","indahpuspita1@gmail.com","khansaltf@gmail.com","w.astuti@gmail.com","kurnia123@gmail.com","fadlimustofa@gmail.com","sabrina@gmail.com","salsabilaf@gmail.com","maharani@gmail.com"};
-        String[] kampus = {"Universitas Dian Nuswantoro","Universitas Negeri Semarang","Universitas Gadjah Mada","Universitas Diponegoro","Universitas Muhammadiyah Semarang","Universitas Muhammadiyah Semarang","-","Universitas Negeri Yogyakarta","Universitas Dian Nuswantoro"};
-        String[] jenjang = {"Sarjana(S1)","Sarjana(S1)","Sarjana(S1)","Sarjana(S1)","Sarjana(S1)","Sarjana(S1)","-","Sarjana(S1)","Sarjana(S1)",};
-        String[] jurusan = {"Teknik Elektro","Ilmu Komunikasi","Manajemen","Akuntansi","Sastra Inggris","Akuntansi Perpajakan","-","Manajemen","Matematika",};
+        int[] imageId = {R.drawable.no_image,R.drawable.no_image,R.drawable.no_image,R.drawable.no_image,R.drawable.no_image,R.drawable.no_image,R.drawable.no_image,R.drawable.no_image,R.drawable.no_image,};
 
-        ArrayList<Member> memberArrayList = new ArrayList<>();
+        ArrayList<Bisnis> bisnisArrayList = new ArrayList<>();
 
         for(int i = 0;i< imageId.length;i++){
-            Member member = new Member(nama[i],angkatan[i],bisnis[i],alamat[i],email[i],kampus[i],jenjang[i],jurusan[i],imageId[i]);
-            memberArrayList.add(member);
+            Bisnis bisnis = new Bisnis(namab[i],bidang[i],alamat[i],email[i],nohp[i],produk[i],nama[i],angkatan[i],imageId[i]);
+            bisnisArrayList.add(bisnis);
         }
-        ListAdapter listAdapter = new ListAdapter(DataMember.this,memberArrayList);
+        BisnisAdapter bisnisAdapter = new BisnisAdapter(DataBisnis.this,bisnisArrayList);
 
-        binding.listview.setAdapter((android.widget.ListAdapter) listAdapter);
-        binding.listview.setClickable(true);
-        binding.listview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        binding.bisnisview.setAdapter((android.widget.ListAdapter) bisnisAdapter);
+        binding.bisnisview.setClickable(true);
+        binding.bisnisview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                Intent i = new Intent(DataMember.this,MemberActivity.class);
+                Intent i = new Intent(DataBisnis.this,BisnisActivity.class);
+                i.putExtra("namab",namab[position]);
+                i.putExtra("bidang",bidang[position]);
+                i.putExtra("alamat",alamat[position]);
+                i.putExtra("email",email[position]);
+                i.putExtra("nohp",nohp[position]);
+                i.putExtra("produk",produk[position]);
                 i.putExtra("nama",nama[position]);
                 i.putExtra("angkatan",angkatan[position]);
-                i.putExtra("alamat",alamat[position]);
-                i.putExtra("bisnis",bisnis[position]);
                 i.putExtra("imageId",imageId[position]);
-                i.putExtra("email",email[position]);
-                i.putExtra("kampus",kampus[position]);
-                i.putExtra("jenjang",jenjang[position]);
-                i.putExtra("jurusan",jurusan[position]);
                 startActivity(i);
             }
         });
@@ -86,28 +86,28 @@ public class DataMember extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
-                        Intent intent2 = new Intent(DataMember.this,home_page.class);
+                        Intent intent2 = new Intent(DataBisnis.this,home_page.class);
                         startActivity(intent2);
                         break;
                     case R.id.editProfil:
 
                     case R.id.tambahPendidikan:
-                        Intent intent = new Intent(DataMember.this,TambahPendidikan.class);
+                        Intent intent = new Intent(DataBisnis.this,TambahPendidikan.class);
                         startActivity(intent);
                         break;
                     case R.id.tambahBisnis:
-                        Intent intent1 = new Intent(DataMember.this,TambahBisnis.class);
+                        Intent intent1 = new Intent(DataBisnis.this,TambahBisnis.class);
                         startActivity(intent1);
                         break;
                     case R.id.tambahKarir:
-                        Intent intent3 = new Intent(DataMember.this,TambahKarir.class);
+                        Intent intent3 = new Intent(DataBisnis.this,TambahKarir.class);
                         startActivity(intent3);
                         break;
                     case R.id.dataMember:
+                        Intent intent4 = new Intent(DataBisnis.this,DataMember.class);
+                        startActivity(intent4);
                         break;
                     case R.id.dataBisnis:
-                        Intent intent4 = new Intent(DataMember.this,DataBisnis.class);
-                        startActivity(intent4);
                         break;
                 }
                 return true;
