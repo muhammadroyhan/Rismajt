@@ -44,7 +44,9 @@ public class TambahKarir extends AppCompatActivity {
                         Intent intent3 = new Intent(TambahKarir.this, home_page.class);
                         startActivity(intent3);
                     case R.id.editProfil:
-
+                        Intent intent7 = new Intent(TambahKarir.this,UserProfile.class);
+                        startActivity(intent7);
+                        break;
                     case R.id.tambahPendidikan:
                         Intent intent = new Intent(TambahKarir.this,TambahPendidikan.class);
                         startActivity(intent);
@@ -60,6 +62,17 @@ public class TambahKarir extends AppCompatActivity {
                         startActivity(intent2);
                         break;
                     case R.id.dataBisnis:
+                        Intent intent4 = new Intent(TambahKarir.this,DataBisnis.class);
+                        startActivity(intent4);
+                        break;
+                    case R.id.mitra:
+                        Intent intent5 = new Intent(TambahKarir.this,Mitra.class);
+                        startActivity(intent5);
+                        break;
+                    case R.id.tentang:
+                        Intent intent6 = new Intent(TambahKarir.this,RismaJT.class);
+                        startActivity(intent6);
+                        break;
 
                 }
                 return true;

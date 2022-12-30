@@ -90,7 +90,9 @@ public class DataBisnis extends AppCompatActivity {
                         startActivity(intent2);
                         break;
                     case R.id.editProfil:
-
+                        Intent intent6 = new Intent(DataBisnis.this,UserProfile.class);
+                        startActivity(intent6);
+                        break;
                     case R.id.tambahPendidikan:
                         Intent intent = new Intent(DataBisnis.this,TambahPendidikan.class);
                         startActivity(intent);
@@ -113,8 +115,8 @@ public class DataBisnis extends AppCompatActivity {
                         Intent intent5 = new Intent(DataBisnis.this,Mitra.class);
                         startActivity(intent5);
                     case R.id.tentang:
-                        Intent intent6 = new Intent(DataBisnis.this,RismaJT.class);
-                        startActivity(intent6);
+                        Intent intent7 = new Intent(DataBisnis.this,RismaJT.class);
+                        startActivity(intent7);
                 }
                 return true;
             }

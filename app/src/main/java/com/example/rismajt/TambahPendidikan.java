@@ -45,7 +45,9 @@ public class TambahPendidikan extends AppCompatActivity {
                         startActivity(intent1);
                         break;
                     case R.id.editProfil:
-
+                        Intent intent7 = new Intent(TambahPendidikan.this,UserProfile.class);
+                        startActivity(intent7);
+                        break;
                     case R.id.tambahPendidikan:
                         break;
                     case R.id.tambahBisnis:
@@ -56,13 +58,22 @@ public class TambahPendidikan extends AppCompatActivity {
                         Intent intent3 = new Intent(TambahPendidikan.this,TambahKarir.class);
                         startActivity(intent3);
                         break;
-
                     case R.id.dataMember:
                         Intent intent2 = new Intent(TambahPendidikan.this,DataMember.class);
                         startActivity(intent2);
                         break;
                     case R.id.dataBisnis:
-
+                        Intent intent4 = new Intent(TambahPendidikan.this,DataBisnis.class);
+                        startActivity(intent4);
+                        break;
+                    case R.id.mitra:
+                        Intent intent5 = new Intent(TambahPendidikan.this,Mitra.class);
+                        startActivity(intent5);
+                        break;
+                    case R.id.tentang:
+                        Intent intent6 = new Intent(TambahPendidikan.this,RismaJT.class);
+                        startActivity(intent6);
+                        break;
                 }
                 return true;
             }

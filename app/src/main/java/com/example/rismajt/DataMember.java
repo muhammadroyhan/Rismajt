@@ -90,7 +90,9 @@ public class DataMember extends AppCompatActivity {
                         startActivity(intent2);
                         break;
                     case R.id.editProfil:
-
+                        Intent intent7 = new Intent(DataMember.this,UserProfile.class);
+                        startActivity(intent7);
+                        break;
                     case R.id.tambahPendidikan:
                         Intent intent = new Intent(DataMember.this,TambahPendidikan.class);
                         startActivity(intent);
