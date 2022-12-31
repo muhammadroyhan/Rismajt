@@ -109,7 +109,7 @@ public class home_page extends AppCompatActivity {
     }
 
     public void clickMitra(View view){
-        Intent i = new Intent(home_page.this, Mitra.class);
+        Intent i = new Intent(home_page.this, RismaJT.class);
         startActivity(i);
     }
 
