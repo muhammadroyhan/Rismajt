@@ -42,8 +42,8 @@ public class TambahKarir extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
-                        Intent intent3 = new Intent(TambahKarir.this, home_page.class);
-                        startActivity(intent3);
+                        Intent intent0 = new Intent(TambahKarir.this, home_page.class);
+                        startActivity(intent0);
                     case R.id.editProfil:
                         Intent intent7 = new Intent(TambahKarir.this,UserProfile.class);
                         startActivity(intent7);

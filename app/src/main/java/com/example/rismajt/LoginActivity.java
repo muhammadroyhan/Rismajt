@@ -43,7 +43,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (!validateEmail() | !validatePassword()){
 
                 }else {
-                    checkUser();
+                    Intent intent = new Intent(LoginActivity.this, home_page.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -78,39 +79,39 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void checkUser(){
-        String userEmail = loginemail.getText().toString().trim();
-        String userPassword = loginpassword.getText().toString().trim();
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-        Query checkUserDatabase = reference.orderByChild("email").equalTo(userEmail);
-
-        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                if (snapshot.exists()){
-                    loginemail.setError(null);
-                    String passwordFormDB = snapshot.child(userEmail).child("password").getValue(String.class);
-
-                    if (!Objects.equals(passwordFormDB, userPassword)){
-                        loginemail.setError(null);
-                        Intent intent = new Intent(LoginActivity.this, home_page.class);
-                        startActivity(intent);
-                    }else {
-                        loginpassword.setError("Invalid Credential");
-                        loginpassword.requestFocus();
-                    }
-                }else {
-                    loginemail.setError("User does not exist");
-                    loginemail.requestFocus();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
+//    public void checkUser(){
+//        String userEmail = loginemail.getText().toString().trim();
+//        String userPassword = loginpassword.getText().toString().trim();
+//
+//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+//        Query checkUserDatabase = reference.orderByChild("email").equalTo(userEmail);
+//
+//        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                if (snapshot.exists()){
+//                    loginemail.setError(null);
+//                    String passwordFormDB = snapshot.child(userEmail).child("password").getValue(String.class);
+//
+//                    if (!Objects.equals(passwordFormDB, userPassword)){
+//                        loginemail.setError(null);
+//                        Intent intent = new Intent(LoginActivity.this, home_page.class);
+//                        startActivity(intent);
+//                    }else {
+//                        loginpassword.setError("Invalid Credential");
+//                        loginpassword.requestFocus();
+//                    }
+//                }else {
+//                    loginemail.setError("User does not exist");
+//                    loginemail.requestFocus();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//    }
 }
