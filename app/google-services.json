@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "297770299378",
+    "project_id": "rismajt",
+    "storage_bucket": "rismajt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297770299378:android:ac9c9d25db65fab831456b",
+        "android_client_info": {
+          "package_name": "com.example.rismajt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297770299378-ulinsgf94d2o0kgo6qrmai62591ako2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgAn33orGdk0dNrGsFztu8amIqCkMnLFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297770299378-ulinsgf94d2o0kgo6qrmai62591ako2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
