@@ -60,34 +60,33 @@
         android:minHeight="48dp" />
 
     <LinearLayout
-        android:id="@+id/buttonLogin"
-        android:layout_below="@id/edtPassword"
-        android:orientation="horizontal"
+        android:id="@+id/linearbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_below="@id/edtPassword"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="0dp"
-            android:textSize="18dp"
-            android:textColor="@color/brown"
             android:text="Lupa Password?"
-            />
+            android:textColor="@color/brown"
+            android:textSize="18dp" />
 
         <Button
+            android:id="@+id/buttonLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:text="Login"
-            android:textSize="18dp"
-            android:textColor="@color/white"
             android:background="@drawable/btn_blue"
-            />
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
     </LinearLayout>
 
     <TextView
@@ -100,19 +99,18 @@
         android:layout_marginRight="20dp"
         android:textSize="20dp"
         android:textColor="@color/brown"
-        android:layout_below="@+id/buttonLogin"/>
+        android:layout_below="@+id/linearbutton"/>
 
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Daftar"
-        android:textSize="18dp"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_brown"
         android:layout_below="@id/textRegister"
-        />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_brown"
+        android:text="Daftar"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
 </RelativeLayout>

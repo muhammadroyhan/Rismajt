@@ -42,14 +42,14 @@ public class RegisterActivity extends AppCompatActivity {
 
         btndaftar.setOnClickListener(v -> {
             if (edtnama.getText().length()>0 && edtAngkatan.getText().length()>0 && edtEmail.getText().length()>0 && edtPassword.getText().length()>0 && edtWA.getText().length()>12){
-                saveData(edtnama.getText().toString(), edtAngkatan.getText().toString(), edtEmail.getText().toString(), edtPassword.getText().toString(), edtWA.getText().toString());
+                RegisterData(edtnama.getText().toString(), edtAngkatan.getText().toString(), edtEmail.getText().toString(), edtPassword.getText().toString(), edtWA.getText().toString());
             }else {
                 Toast.makeText(getApplicationContext(), "Silahkan isi semua data!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void saveData(String edtnama,String edtAngkatan ,String edtEmail, String edtPassword, String edtWA){
+    private void RegisterData(String edtnama,String edtAngkatan ,String edtEmail, String edtPassword, String edtWA){
         Map<String, Object> user = new HashMap<>();
         user.put("edtnama", edtnama);
         user.put("edtAngkatan", edtAngkatan);

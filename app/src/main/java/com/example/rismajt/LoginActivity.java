@@ -21,6 +21,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private Button buttonLogin;
     private Button buttonRegister;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     EditText editTextEmail;
@@ -33,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.edtEmail);
         editTextPassword = findViewById(R.id.edtPassword);
         buttonRegister = findViewById(R.id.buttonRegister);
+        buttonLogin = findViewById(R.id.buttonLogin);
 
         db.collection("Users")
                 .get()
