@@ -1,85 +1,116 @@
 package com.example.rismajt;
 
-import androidx.activity.result.contract.ActivityResultContracts;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button buttonLogin;
-    private Button buttonRegister;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    EditText editTextEmail;
-    EditText editTextPassword;
+    EditText loginemail, loginpassword;
+    Button buttonLogin;
+    Button buttonRegister;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle("Login");
-        editTextEmail = findViewById(R.id.edtEmail);
-        editTextPassword = findViewById(R.id.edtPassword);
+        loginemail = findViewById(R.id.loginemail);
+        loginpassword = findViewById(R.id.loginpassword);
         buttonRegister = findViewById(R.id.buttonRegister);
         buttonLogin = findViewById(R.id.buttonLogin);
 
-        db.collection("Users")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!validateEmail() | !validatePassword()){
 
-                            }
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Data gagal di ambil!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-        buttonRegister.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+                }else {
+                    checkUser();
+                }
+            }
+        });
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
         });
     }
-//    public void postLogin(View view) {
-//        if (TextUtils.isEmpty(editTextEmail.getText().toString().trim())
-//                &&
-//                TextUtils.isEmpty(editTextPassword.getText().toString().trim())) {
-//            Toast.makeText(view.getContext(), "Email dan Password tidak Boleh Kosong", Toast.LENGTH_LONG).show();
-//        }
-//        if (TextUtils.isEmpty(editTextEmail.getText().toString().trim())) {
-//            Toast.makeText(view.getContext(), "Email Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
-//        }
-//        else
-//        if (!isValidEmail(editTextEmail.getText().toString().trim())) {
-//            Toast.makeText(view.getContext(), "Email Tidak Valid", Toast.LENGTH_SHORT).show();
-//        }
-//        else if (TextUtils.isEmpty(editTextPassword.getText().toString())) {
-//            Toast.makeText(view.getContext(), "Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
-//        } else {
-//            Intent i = new Intent(LoginActivity.this, home_page.class);
-//            startActivity(i);
-//        }
-//    }
-//    public void clickLupa(View view) {
-//        Intent i = new Intent(LoginActivity.this, ForgotActivity.class);
-//        startActivity(i);
-//    }
-//    public static boolean isValidEmail (CharSequence email){
-//        return (Patterns.EMAIL_ADDRESS.matcher(email).matches());
-//    }
+    public Boolean validateEmail(){
+        String val = loginemail.getText().toString();
+            if (val.isEmpty()){
+                loginemail.setError("Email cannot be empty!");
+                return false;
+            } else {
+                loginemail.setError(null);
+                return true;
+            }
+    }
+
+    public Boolean validatePassword(){
+        String val = loginpassword.getText().toString();
+            if (val.isEmpty()){
+                loginpassword.setError("Password cannot be empty!");
+                return false;
+            } else {
+                loginpassword.setError(null);
+                return true;
+            }
+
+    }
+
+    public void checkUser(){
+        String userEmail = loginemail.getText().toString().trim();
+        String userPassword = loginpassword.getText().toString().trim();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+        Query checkUserDatabase = reference.orderByChild("email").equalTo(userEmail);
+
+        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()){
+                    loginemail.setError(null);
+                    String passwordFormDB = snapshot.child(userEmail).child("password").getValue(String.class);
+
+                    if (!Objects.equals(passwordFormDB, userPassword)){
+                        loginemail.setError(null);
+                        Intent intent = new Intent(LoginActivity.this, home_page.class);
+                        startActivity(intent);
+                    }else {
+                        loginpassword.setError("Invalid Credential");
+                        loginpassword.requestFocus();
+                    }
+                }else {
+                    loginemail.setError("User does not exist");
+                    loginemail.requestFocus();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }

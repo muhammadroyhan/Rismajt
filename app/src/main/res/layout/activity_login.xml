@@ -21,20 +21,20 @@
         android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
-        android:layout_marginTop="140dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="140dp"
         android:layout_marginRight="10dp"
-        android:textSize="15sp"/>
+        android:text="Email"
+        android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/loginemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtEmail"
-        android:hint="Email Anda"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:hint="Email Anda"
         android:minHeight="48dp" />
 
     <TextView
@@ -46,24 +46,24 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textSize="15dp"
-        android:layout_below="@+id/edtEmail"/>
+        android:layout_below="@+id/loginemail"/>
 
     <EditText
-        android:id="@+id/edtPassword"
+        android:id="@+id/loginpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtPassword"
-        android:hint="********"
-        android:inputType="textPassword"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:hint="********"
+        android:inputType="textPassword"
         android:minHeight="48dp" />
 
     <LinearLayout
         android:id="@+id/linearbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edtPassword"
+        android:layout_below="@id/loginpassword"
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
