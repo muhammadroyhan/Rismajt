@@ -75,7 +75,7 @@
             android:textSize="18dp"
             android:textColor="@color/brown"
             android:text="Lupa Password?"
-            android:onClick="clickLupa"/>
+            />
 
         <Button
             android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
             android:textSize="18dp"
             android:textColor="@color/white"
             android:background="@drawable/btn_blue"
-            android:onClick="postLogin"/>
+            />
     </LinearLayout>
 
     <TextView
@@ -114,5 +114,5 @@
         android:textColor="@color/white"
         android:background="@drawable/btn_brown"
         android:layout_below="@id/textRegister"
-        android:onClick="postRegister"/>
+        />
 </RelativeLayout>
