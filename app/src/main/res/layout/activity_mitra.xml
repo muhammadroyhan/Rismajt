@@ -1,24 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Mitra">
 
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            app:navigationIcon="@drawable/ic_baseline_menu_24"
+            >
+        </androidx.appcompat.widget.Toolbar>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_newsheadline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp">
+            app:cardCornerRadius="16dp"
+            android:onClick="clickMitra1">
 
             <ImageView
                 android:id="@+id/img_utama"
@@ -56,5 +73,144 @@
                     android:textSize="12sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/search"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_mitra"
+            android:onClick="clickMitra2">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_homeCat_adapter1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Jeram Adventure"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_homeCat_adapter1"
+                app:layout_constraintEnd_toStartOf="@+id/imageView_homeCat_adapter1"
+                app:layout_constraintTop_toTopOf="@+id/imageView_homeCat_adapter1" />
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imageView_homeCat_adapter1"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/jeram"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius_bottom_left="15dp"
+                app:riv_corner_radius_bottom_right="15dp"
+                app:riv_corner_radius_top_right="15dp"
+                app:riv_corner_radius_top_left="15dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/search"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_mitra"
+            android:onClick="clickMitra3">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_homeCat_adapter2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="AHAD DIGITAL"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_homeCat_adapter2"
+                app:layout_constraintEnd_toStartOf="@+id/imageView_homeCat_adapter2"
+                app:layout_constraintTop_toTopOf="@+id/imageView_homeCat_adapter2" />
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imageView_homeCat_adapter2"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/ahad"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius_bottom_left="15dp"
+                app:riv_corner_radius_bottom_right="15dp"
+                app:riv_corner_radius_top_right="15dp"
+                app:riv_corner_radius_top_left="15dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/search"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_mitra"
+            android:onClick="clickMitra4">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_homeCat_adapter3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Warung Kopi Bersaudara"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_homeCat_adapter3"
+                app:layout_constraintEnd_toStartOf="@+id/imageView_homeCat_adapter3"
+                app:layout_constraintTop_toTopOf="@+id/imageView_homeCat_adapter3" />
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imageView_homeCat_adapter3"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/kopi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius_bottom_left="15dp"
+                app:riv_corner_radius_bottom_right="15dp"
+                app:riv_corner_radius_top_right="15dp"
+                app:riv_corner_radius_top_left="15dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
-</ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>
